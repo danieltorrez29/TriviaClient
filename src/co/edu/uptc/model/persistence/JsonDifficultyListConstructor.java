@@ -13,19 +13,20 @@ import co.edu.uptc.model.business.Question;
 import co.edu.uptc.model.business.Categorie;
 
 /**
+ * 
+ * JsonDifficultyListConstructor class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description JsonDifficultyListConstructor Class
  */
 
 public class JsonDifficultyListConstructor {
 
 	/**
 	 * 
-	 * getQuestions ArrayList<Difficulty> method that builds a Difficulty list from
-	 * a json String
+	 * getQuestions method that builds a Difficulty list from a json String
 	 * 
-	 * @return ArrayList<Difficulty>
+	 * @param jsonQuestions
+	 * @return Difficulty List
 	 */
 
 	public static ArrayList<Difficulty> getQuestions(String jsonQuestions) {

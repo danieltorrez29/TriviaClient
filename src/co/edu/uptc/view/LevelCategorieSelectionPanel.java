@@ -17,29 +17,90 @@ import co.edu.uptc.model.business.Categorie;
 import co.edu.uptc.model.business.Difficulty;
 
 /**
+ * 
+ * LevelCategorieSelectionPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description LevelTopicSelectionPanel Class
  */
 
-public class LevelTopicSelectionPanel extends JPanel {
+public class LevelCategorieSelectionPanel extends JPanel {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Purple panel
+	 */
+
 	private JPanel purplePanel;
+
+	/**
+	 * Logo label
+	 */
+
 	private JLabel logoLabel;
+
+	/**
+	 * Selection level label
+	 */
+
 	private JLabel selectionLevelLabel;
+
+	/**
+	 * Easy topics label
+	 */
+
 	private JLabel easyTopicsLabel;
+
+	/**
+	 * Hard topics label
+	 */
+
 	private JLabel hardTopicsLabel;
+
+	/**
+	 * Levels combo box
+	 */
+
 	private JComboBox<String> levelsComboBox;
+
+	/**
+	 * Easy topics combo box
+	 */
+
 	private JComboBox<String> easyTopicsComboBox;
+
+	/**
+	 * Hard topics combo box
+	 */
+
 	private JComboBox<String> hardTopicsComboBox;
+
+	/**
+	 * Play button
+	 */
+
 	private JButton playButton;
-	private JButton signOffButton;
+
+	/**
+	 * Sign out button
+	 */
+
+	private JButton signOutButton;
+
+	/**
+	 * Podium button
+	 */
+
 	private JButton podiumButton;
+
+	/**
+	 * Last stats button
+	 */
+
 	private JButton lastStatsButton;
 
 	/**
@@ -51,7 +112,7 @@ public class LevelTopicSelectionPanel extends JPanel {
 	 * @param hardCategorieList
 	 */
 
-	public LevelTopicSelectionPanel(ActionListener listener, Difficulty easyCategorieList,
+	public LevelCategorieSelectionPanel(ActionListener listener, Difficulty easyCategorieList,
 			Difficulty hardCategorieList) {
 		setSize(420, 900);
 		initComponents(listener, easyCategorieList, hardCategorieList);
@@ -94,7 +155,7 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_logoLabel.gridy = 1;
 		add(logoLabel, gbc_logoLabel);
 
-		selectionLevelLabel = new JLabel("Seleccione nivel");
+		selectionLevelLabel = new JLabel("Select level");
 		selectionLevelLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
 		GridBagConstraints gbc_selectionLevelLabel = new GridBagConstraints();
 		gbc_selectionLevelLabel.gridwidth = 2;
@@ -106,8 +167,8 @@ public class LevelTopicSelectionPanel extends JPanel {
 		levelsComboBox = new JComboBox<String>();
 		levelsComboBox.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		levelsComboBox.setEditable(false);
-		levelsComboBox.addItem("Fácil");
-		levelsComboBox.addItem("Avanzado");
+		levelsComboBox.addItem("Easy");
+		levelsComboBox.addItem("Hard");
 		GridBagConstraints gbc_levelComboBox = new GridBagConstraints();
 		gbc_levelComboBox.gridwidth = 2;
 		gbc_levelComboBox.insets = new Insets(0, 0, 5, 0);
@@ -115,7 +176,7 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_levelComboBox.gridy = 3;
 		add(levelsComboBox, gbc_levelComboBox);
 
-		easyTopicsLabel = new JLabel("Categorías - Fácil");
+		easyTopicsLabel = new JLabel("Categories - Easy");
 		easyTopicsLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
 		GridBagConstraints gbc_easyTopicsLabel = new GridBagConstraints();
 		gbc_easyTopicsLabel.insets = new Insets(10, 0, 5, 5);
@@ -123,7 +184,7 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_easyTopicsLabel.gridy = 4;
 		add(easyTopicsLabel, gbc_easyTopicsLabel);
 
-		hardTopicsLabel = new JLabel("Categor\u00EDas - Avanzado");
+		hardTopicsLabel = new JLabel("Categories - Hard");
 		hardTopicsLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
 		GridBagConstraints gbc_hardTopicsLabel = new GridBagConstraints();
 		gbc_hardTopicsLabel.insets = new Insets(10, 0, 5, 0);
@@ -151,11 +212,11 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_hardTopicsComboBox.gridy = 5;
 		add(hardTopicsComboBox, gbc_hardTopicsComboBox);
 
-		playButton = new JButton("Jugar");
+		playButton = new JButton("Play");
 		playButton.setMargin(new Insets(2, 140, 2, 140));
 		playButton.setFont(new Font("Ebrima", Font.BOLD, 18));
 		playButton.addActionListener(listener);
-		playButton.setActionCommand("Jugar");
+		playButton.setActionCommand("Play");
 		GridBagConstraints gbc_playButton = new GridBagConstraints();
 		gbc_playButton.gridwidth = 2;
 		gbc_playButton.insets = new Insets(20, 0, 20, 0);
@@ -163,15 +224,23 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_playButton.gridy = 6;
 		add(playButton, gbc_playButton);
 
-		signOffButton = new JButton("Cerrar Sesión");
-		signOffButton.setFont(new Font("Ebrima", Font.BOLD, 16));
-		signOffButton.addActionListener(listener);
+		signOutButton = new JButton("Sign Out");
+		signOutButton.setFont(new Font("Ebrima", Font.BOLD, 16));
+		signOutButton.setFocusPainted(false);
+		GridBagConstraints gbc_signOutButton = new GridBagConstraints();
+		gbc_signOutButton.insets = new Insets(0, 0, 50, 0);
+		gbc_signOutButton.gridwidth = 2;
+		gbc_signOutButton.gridx = 0;
+		gbc_signOutButton.gridy = 9;
+		signOutButton.addActionListener(listener);
+		signOutButton.setActionCommand("Sign Out");
+		add(signOutButton, gbc_signOutButton);
 
-		lastStatsButton = new JButton("Últimas Estadísticas");
+		lastStatsButton = new JButton("Last Stats");
 		lastStatsButton.setMargin(new Insets(2, 60, 2, 60));
 		lastStatsButton.setFont(new Font("Ebrima", Font.BOLD, 16));
 		lastStatsButton.addActionListener(listener);
-		lastStatsButton.setActionCommand("Últimas Estadísticas");
+		lastStatsButton.setActionCommand("Last Stats");
 		GridBagConstraints gbc_lastStatsButton = new GridBagConstraints();
 		gbc_lastStatsButton.gridwidth = 2;
 		gbc_lastStatsButton.insets = new Insets(0, 0, 20, 0);
@@ -179,26 +248,17 @@ public class LevelTopicSelectionPanel extends JPanel {
 		gbc_lastStatsButton.gridy = 7;
 		add(lastStatsButton, gbc_lastStatsButton);
 
-		podiumButton = new JButton("Podio");
+		podiumButton = new JButton("Podium");
 		podiumButton.setMargin(new Insets(2, 60, 2, 60));
 		podiumButton.setFont(new Font("Ebrima", Font.BOLD, 16));
 		podiumButton.addActionListener(listener);
-		podiumButton.setActionCommand("Podio");
+		podiumButton.setActionCommand("Podium");
 		GridBagConstraints gbc_podiumButton = new GridBagConstraints();
 		gbc_podiumButton.gridwidth = 2;
 		gbc_podiumButton.insets = new Insets(0, 0, 20, 0);
 		gbc_podiumButton.gridx = 0;
 		gbc_podiumButton.gridy = 8;
 		add(podiumButton, gbc_podiumButton);
-
-		signOffButton.setActionCommand("Cerrar Sesión");
-		signOffButton.setFocusPainted(false);
-		GridBagConstraints gbc_signOffButton = new GridBagConstraints();
-		gbc_signOffButton.insets = new Insets(0, 0, 50, 0);
-		gbc_signOffButton.gridwidth = 2;
-		gbc_signOffButton.gridx = 0;
-		gbc_signOffButton.gridy = 9;
-		add(signOffButton, gbc_signOffButton);
 	}
 
 	/**
@@ -246,10 +306,10 @@ public class LevelTopicSelectionPanel extends JPanel {
 
 	/**
 	 * 
-	 * setDefaultLevelTopicSelectionPanelComboBox void method
+	 * setDefaultLevelCategorieSelectionPanelCursorPosition void method
 	 */
 
-	public void setDefaultLevelTopicSelectionPanelCursorPosition() {
+	public void setDefaultLevelCategorieSelectionPanelCursorPosition() {
 		levelsComboBox.requestFocusInWindow();
 	}
 }

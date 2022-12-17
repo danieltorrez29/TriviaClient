@@ -6,15 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * 
+ * MessageDialog class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description MessageDialog Class
  */
 
 public class MessageDialog extends JDialog {
 
 	/**
-	 * Constants
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;

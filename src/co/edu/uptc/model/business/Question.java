@@ -3,17 +3,24 @@ package co.edu.uptc.model.business;
 import java.util.ArrayList;
 
 /**
+ * 
+ * Question class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description Question Class
  */
 
 public class Question {
+
 	/**
-	 * Attribute declaration
+	 * Statement
 	 */
 
 	private String statement;
+
+	/**
+	 * Answer list
+	 */
+
 	private ArrayList<Answer> answers;
 
 	/**

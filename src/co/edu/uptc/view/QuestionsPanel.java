@@ -18,26 +18,78 @@ import javax.swing.JPanel;
 import co.edu.uptc.model.business.Question;
 
 /**
+ * 
+ * QuestionsPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description QuestionsPanel Class
  */
 
 public class QuestionsPanel extends JPanel {
+
 	/**
 	 * Attribute declaration
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Purple panel
+	 */
+
 	private JPanel purplePanel;
+
+	/**
+	 * Questions card panel
+	 */
+
 	private JPanel questionsCardPanel;
+
+	/**
+	 * Empty panel
+	 */
+
 	private JPanel emptyPanel;
+
+	/**
+	 * Logo label
+	 */
+
 	private JLabel logoLabel;
+
+	/**
+	 * Question panel
+	 */
+
 	private QuestionPanel questionPanel;
+
+	/**
+	 * Next button
+	 */
+
 	private JButton nextButton;
+
+	/**
+	 * Fifty button
+	 */
+
 	private JButton fiftyButton;
+
+	/**
+	 * Correct
+	 */
+
 	private int correct;
+
+	/**
+	 * Incorrect
+	 */
+
 	private int incorrect;
+
+	/**
+	 * Last question panel aux
+	 */
+
 	private int lastQuestionPanelAux;
 
 	/**
@@ -110,12 +162,12 @@ public class QuestionsPanel extends JPanel {
 		gbc_fiftyButton.gridy = 3;
 		add(fiftyButton, gbc_fiftyButton);
 
-		nextButton = new JButton("Siguiente");
+		nextButton = new JButton("Next");
 		nextButton.setMargin(new Insets(2, 50, 2, 50));
 		nextButton.setFocusPainted(false);
 		nextButton.setFont(new Font("Ebrima", Font.BOLD, 16));
 		nextButton.addActionListener(listener);
-		nextButton.setActionCommand("Siguiente");
+		nextButton.setActionCommand("Next");
 		GridBagConstraints gbc_nextButton = new GridBagConstraints();
 		gbc_nextButton.insets = new Insets(0, 0, 15, 0);
 		gbc_nextButton.gridx = 1;
@@ -150,8 +202,6 @@ public class QuestionsPanel extends JPanel {
 	/**
 	 * 
 	 * emptyQuestionsCardPanel void method
-	 * 
-	 * @param questions
 	 */
 
 	public void emptyQuestionsCardPanel() {
@@ -202,7 +252,7 @@ public class QuestionsPanel extends JPanel {
 	 * hideIncorrectAnswersAction void method
 	 */
 
-	public void hideIncorrectAnswersAction() {
+	public void hideWrongAnswersAction() {
 		getCurrentQuestionPanel().hideIncorrectAnswers();
 	}
 

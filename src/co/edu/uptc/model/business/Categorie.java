@@ -3,21 +3,28 @@ package co.edu.uptc.model.business;
 import java.util.ArrayList;
 
 /**
+ * 
+ * Categorie class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description Categorie Class
  */
 
 public class Categorie {
 
 	/**
-	 * Attribute declaration
+	 * Name
 	 */
 
 	private String name;
+
+	/**
+	 * Question list
+	 */
+
 	private ArrayList<Question> questions;
 
 	/**
+	 * 
 	 * Constructor method
 	 * 
 	 * @param name

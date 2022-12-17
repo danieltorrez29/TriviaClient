@@ -15,37 +15,108 @@ import co.edu.uptc.model.business.Question;
 import co.edu.uptc.model.business.User;
 
 /**
+ * 
+ * TriviaFrame class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description TriviaFrame Class
  */
 
 public class TriviaFrame extends JFrame {
 
 	/**
-	 * Identifiers
+	 * Welcome panel identifier
 	 */
 
 	private final static String WELCOME_PANEL = "welcomePanel";
+
+	/**
+	 * Login panel identifier
+	 */
+
 	private final static String LOGIN_PANEL = "loginPanel";
+
+	/**
+	 * Register panel identifier
+	 */
+
 	private final static String REGISTER_PANEL = "registerPanel";
-	private final static String LEVEL_TOPIC_SELECION_PANEL = "levelTopicSelectionPanel";
+
+	/**
+	 * Level categorie selection panel identifier
+	 */
+
+	private final static String LEVEL_CATEGORIE_SELECTION_PANEL = "levelCategorieSelectionPanel";
+
+	/**
+	 * Questions panel identifier
+	 */
+
 	private final static String QUESTIONS_PANEL = "questionsPanel";
+
+	/**
+	 * Stats panel identifier
+	 */
+
 	private final static String STATS_PANEL = "statsPanel";
+
+	/**
+	 * Podium panel identifier
+	 */
+
 	private final static String PODIUM_PANEL = "podiumPanel";
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Content pane
+	 */
+
 	private JPanel contentPane;
+
+	/**
+	 * Welcome panel
+	 */
+
 	private WelcomePanel welcomePanel;
+
+	/**
+	 * Login panel
+	 */
+
 	private LoginPanel loginPanel;
+
+	/**
+	 * Register panel
+	 */
+
 	private RegisterPanel registerPanel;
-	private LevelTopicSelectionPanel levelTopicSelectionPanel;
+
+	/**
+	 * Level categorie selection panel
+	 */
+
+	private LevelCategorieSelectionPanel levelCategorieSelectionPanel;
+
+	/**
+	 * Questions panel
+	 */
+
 	private QuestionsPanel questionsPanel;
+
+	/**
+	 * Stats panel
+	 */
+
 	private StatsPanel statsPanel;
+
+	/**
+	 * Podium panel
+	 */
+
 	private PodiumPanel podiumPanel;
 
 	/**
@@ -89,6 +160,8 @@ public class TriviaFrame extends JFrame {
 	 * initComponents void method
 	 * 
 	 * @param listener
+	 * @param easyCategorieList
+	 * @param hardCategorieList
 	 */
 
 	private void initComponents(ActionListener listener, Difficulty easyCategorieList, Difficulty hardCategorieList) {
@@ -96,7 +169,7 @@ public class TriviaFrame extends JFrame {
 		welcomePanel = new WelcomePanel(listener);
 		loginPanel = new LoginPanel(listener);
 		registerPanel = new RegisterPanel(listener);
-		levelTopicSelectionPanel = new LevelTopicSelectionPanel(listener, easyCategorieList, hardCategorieList);
+		levelCategorieSelectionPanel = new LevelCategorieSelectionPanel(listener, easyCategorieList, hardCategorieList);
 		questionsPanel = new QuestionsPanel(listener);
 		statsPanel = new StatsPanel(listener);
 		podiumPanel = new PodiumPanel(listener);
@@ -114,7 +187,7 @@ public class TriviaFrame extends JFrame {
 		contentPane.add(welcomePanel, WELCOME_PANEL);
 		contentPane.add(loginPanel, LOGIN_PANEL);
 		contentPane.add(registerPanel, REGISTER_PANEL);
-		contentPane.add(levelTopicSelectionPanel, LEVEL_TOPIC_SELECION_PANEL);
+		contentPane.add(levelCategorieSelectionPanel, LEVEL_CATEGORIE_SELECTION_PANEL);
 		contentPane.add(questionsPanel, QUESTIONS_PANEL);
 		contentPane.add(statsPanel, STATS_PANEL);
 		contentPane.add(podiumPanel, PODIUM_PANEL);
@@ -133,20 +206,20 @@ public class TriviaFrame extends JFrame {
 
 	/**
 	 * 
-	 * getLoginEmailUsernameFieldText String method
+	 * getLoginUsernameFieldText String method
 	 * 
-	 * @return loginEmailUsernameFieldText
+	 * @return login username field text
 	 */
 
-	public String getLoginEmailUsernameFieldText() {
-		return loginPanel.getLoginEmailUsernameFieldText();
+	public String getLoginUsernameFieldText() {
+		return loginPanel.getLoginUsernameFieldText();
 	}
 
 	/**
 	 * 
 	 * getLoginPasswordFieldText String method
 	 * 
-	 * @return loginPasswordFieldText
+	 * @return login password field text
 	 */
 
 	public String getLoginPasswordFieldText() {
@@ -166,7 +239,7 @@ public class TriviaFrame extends JFrame {
 	 * 
 	 * getRegisterEmailFieldText String method
 	 * 
-	 * @return registerEmailFieldText
+	 * @return register email field text
 	 */
 
 	public String getRegisterEmailFieldText() {
@@ -177,7 +250,7 @@ public class TriviaFrame extends JFrame {
 	 * 
 	 * getRegisterUsernameFieldText String method
 	 * 
-	 * @return registerUsernameFieldText
+	 * @return register username field text
 	 */
 
 	public String getRegisterUsernameFieldText() {
@@ -188,7 +261,7 @@ public class TriviaFrame extends JFrame {
 	 * 
 	 * getRegisterPasswordFieldText String method
 	 * 
-	 * @return registerPasswordFieldText
+	 * @return register password field text
 	 */
 
 	public String getRegisterPasswordFieldText() {
@@ -199,7 +272,7 @@ public class TriviaFrame extends JFrame {
 	 * 
 	 * getRegisterConfirmPasswordFieldText String method
 	 * 
-	 * @return registerConfirmPasswordFieldText
+	 * @return register confirm password field text
 	 */
 
 	public String getRegisterConfirmPasswordFieldText() {
@@ -223,7 +296,7 @@ public class TriviaFrame extends JFrame {
 	 */
 
 	public String getLevelSelected() {
-		return levelTopicSelectionPanel.getLevelSelected();
+		return levelCategorieSelectionPanel.getLevelSelected();
 	}
 
 	/**
@@ -234,7 +307,7 @@ public class TriviaFrame extends JFrame {
 	 */
 
 	public String getEasyTopicSelected() {
-		return levelTopicSelectionPanel.getEasyTopicSelected();
+		return levelCategorieSelectionPanel.getEasyTopicSelected();
 	}
 
 	/**
@@ -245,7 +318,7 @@ public class TriviaFrame extends JFrame {
 	 */
 
 	public String getHardTopicSelected() {
-		return levelTopicSelectionPanel.getHardTopicSelected();
+		return levelCategorieSelectionPanel.getHardTopicSelected();
 	}
 
 	/**
@@ -274,7 +347,7 @@ public class TriviaFrame extends JFrame {
 	 * 
 	 * isCorrectSelectedAnswer boolean method
 	 * 
-	 * @return
+	 * @return true || false
 	 */
 
 	public boolean isCorrectSelectedAnswer() {
@@ -292,11 +365,11 @@ public class TriviaFrame extends JFrame {
 
 	/**
 	 * 
-	 * hideIncorrectAnswersAction void method
+	 * hideWrongAnswersAction void method
 	 */
 
-	public void hideIncorrectAnswersAction() {
-		questionsPanel.hideIncorrectAnswersAction();
+	public void hideWrongAnswersAction() {
+		questionsPanel.hideWrongAnswersAction();
 	}
 
 	/**
@@ -349,7 +422,7 @@ public class TriviaFrame extends JFrame {
 	/**
 	 * getLastQuestionPanelAux method
 	 * 
-	 * @return lastQuestionPanelAux
+	 * @return last question panel aux
 	 */
 
 	public int getLastQuestionPanelAux() {
@@ -381,8 +454,6 @@ public class TriviaFrame extends JFrame {
 	/**
 	 * 
 	 * emptyQuestionsCardPanel void method
-	 * 
-	 * @param questions
 	 */
 
 	public void emptyQuestionsCardPanel() {
@@ -433,7 +504,7 @@ public class TriviaFrame extends JFrame {
 	 */
 
 	public void setDefaultLevelTopicSelecionPanelButton() {
-		getRootPane().setDefaultButton(levelTopicSelectionPanel.getPlayButton());
+		getRootPane().setDefaultButton(levelCategorieSelectionPanel.getPlayButton());
 	}
 
 	/**
@@ -474,11 +545,11 @@ public class TriviaFrame extends JFrame {
 
 	/**
 	 * 
-	 * setDefaultLevelTopicSelectionPanelComboBox void method
+	 * setDefaultLevelCategorieSelectionPanelCursorPosition void method
 	 */
 
-	public void setDefaultLevelTopicSelectionPanelCursorPosition() {
-		levelTopicSelectionPanel.setDefaultLevelTopicSelectionPanelCursorPosition();
+	public void setDefaultLevelCategorieSelectionPanelCursorPosition() {
+		levelCategorieSelectionPanel.setDefaultLevelCategorieSelectionPanelCursorPosition();
 	}
 
 	/**

@@ -1,46 +1,61 @@
 package co.edu.uptc.model.business;
 
 /**
+ * 
+ * Stats class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description Stats Class
  */
 
 public class Stats {
 
 	/**
-	 * Attribute declaration
+	 * Level
 	 */
 
 	private String level;
+
+	/**
+	 * Categorie
+	 */
+
 	private String categorie;
+
+	/**
+	 * Correct
+	 */
+
 	private int correct;
+
+	/**
+	 * Incorrect
+	 */
+
 	private int incorrect;
+
+	/**
+	 * Score
+	 */
+
 	private int score;
+
+	/**
+	 * Accuracy
+	 */
+
 	private double accuracy;
+
+	/**
+	 * Time
+	 */
+
 	private int time;
 
 	/**
-	 * Constructor method
-	 * 
-	 * @param level
-	 * @param categorie
-	 * @param correct
-	 * @param incorrect
-	 * @param score
-	 * @param accuracy
-	 * @param time
+	 * Games played
 	 */
 
-	public Stats(String level, String categorie, int correct, int incorrect, int score, double accuracy, int time) {
-		this.level = level;
-		this.categorie = categorie;
-		this.correct = correct;
-		this.incorrect = incorrect;
-		this.score = score;
-		this.accuracy = accuracy;
-		this.time = time;
-	}
+	private int gamesPlayed;
 
 	/**
 	 * 
@@ -55,6 +70,7 @@ public class Stats {
 		score = 0;
 		accuracy = 0;
 		time = 0;
+		gamesPlayed = 0;
 	}
 
 	/**
@@ -195,6 +211,26 @@ public class Stats {
 
 	public void setTime(int time) {
 		this.time = time;
+	}
+
+	/**
+	 * getGamesPlayed method
+	 * 
+	 * @return gamesPlayed
+	 */
+
+	public int getGamesPlayed() {
+		return gamesPlayed;
+	}
+
+	/**
+	 * setGamesPlayed method
+	 * 
+	 * @param gamesPlayed
+	 */
+
+	public void setGamesPlayed(int gamesPlayed) {
+		this.gamesPlayed = gamesPlayed;
 	}
 
 	/**

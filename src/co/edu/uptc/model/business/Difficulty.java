@@ -3,18 +3,24 @@ package co.edu.uptc.model.business;
 import java.util.ArrayList;
 
 /**
+ * 
+ * Difficulty class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description Difficulty Class
  */
 
 public class Difficulty {
 
 	/**
-	 * Attribute declaration
+	 * Level
 	 */
 
 	private int level;
+
+	/**
+	 * Categorie list
+	 */
+
 	private ArrayList<Categorie> categories;
 
 	/**
@@ -51,7 +57,7 @@ public class Difficulty {
 
 	/**
 	 * 
-	 * searchCategorie Categorie method
+	 * searchCategorie Categorie method that gets a categorie by name
 	 * 
 	 * @param name
 	 * @return Categorie

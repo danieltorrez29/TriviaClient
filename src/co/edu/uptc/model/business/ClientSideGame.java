@@ -3,24 +3,43 @@ package co.edu.uptc.model.business;
 import java.util.ArrayList;
 
 /**
+ * 
+ * ClientSideGame class
+ * 
  * @author Daniel Torres
- * @Date 7/12/2022
- * @Description ClientSideGame Class
  */
 
 public class ClientSideGame {
 
 	/**
-	 * Attribute declaration
+	 * Question list
 	 */
 
 	private ArrayList<Difficulty> questions;
+
+	/**
+	 * Logged in user
+	 */
+
 	private User loggedInUser;
+
+	/**
+	 * Stopwatch
+	 */
+
 	private StopWatch stopWatch;
+
+	/**
+	 * Top five user score list
+	 */
+
 	private ArrayList<User> topFiveUsers;
 
 	/**
+	 * 
 	 * Constructor method
+	 * 
+	 * @param questions
 	 */
 
 	public ClientSideGame(ArrayList<Difficulty> questions) {

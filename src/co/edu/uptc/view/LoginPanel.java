@@ -17,28 +17,79 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
 /**
+ * 
+ * LoginPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description LoginPanel Class
  */
 
 public class LoginPanel extends JPanel {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Purple panel
+	 */
+
 	private JPanel purplePanel;
+
+	/**
+	 * Logo label
+	 */
+
 	private JLabel logoLabel;
-	private JLabel emailUsernameLabel;
+
+	/**
+	 * Username label
+	 */
+
+	private JLabel usernameLabel;
+
+	/**
+	 * Password label
+	 */
+
 	private JLabel passwordLabel;
-	private JTextField emailUsernameField;
+
+	/**
+	 * Username field
+	 */
+
+	private JTextField usernameField;
+
+	/**
+	 * Password field
+	 */
+
 	private JPasswordField passwordField;
-	private PromptText emailUsernamePrompt;
+
+	/**
+	 * Username prompt text
+	 */
+
+	private PromptText usernamePrompt;
+
+	/**
+	 * Password prompt text
+	 */
+
 	private PromptText passwordPrompt;
+
+	/**
+	 * Login button
+	 */
+
 	private JButton loginButton;
-	private JButton registerButton;
+
+	/**
+	 * Create account button
+	 */
+
+	private JButton createAccountButton;
 
 	/**
 	 * 
@@ -84,33 +135,33 @@ public class LoginPanel extends JPanel {
 		gbc_logoLabel.gridy = 1;
 		add(logoLabel, gbc_logoLabel);
 
-		emailUsernameLabel = new JLabel("correo / nombre de usuario");
-		emailUsernameLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
-		emailUsernameLabel.setForeground(new Color(128, 128, 128));
+		usernameLabel = new JLabel("username");
+		usernameLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
+		usernameLabel.setForeground(new Color(128, 128, 128));
 		GridBagConstraints gbc_emailUsernameLabel = new GridBagConstraints();
 		gbc_emailUsernameLabel.anchor = GridBagConstraints.WEST;
 		gbc_emailUsernameLabel.insets = new Insets(0, 10, 5, 10);
 		gbc_emailUsernameLabel.fill = GridBagConstraints.VERTICAL;
 		gbc_emailUsernameLabel.gridx = 0;
 		gbc_emailUsernameLabel.gridy = 2;
-		add(emailUsernameLabel, gbc_emailUsernameLabel);
+		add(usernameLabel, gbc_emailUsernameLabel);
 
-		emailUsernameField = new JTextField();
-		emailUsernameField.setColumns(30);
-		emailUsernameField.setForeground(new Color(128, 128, 128));
-		emailUsernameField.setFont(new Font("Ebrima", Font.PLAIN, 16));
-		emailUsernameField.setBorder(new CompoundBorder(emailUsernameField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
-		emailUsernamePrompt = new PromptText("ingrese correo o nombre de usuario", emailUsernameField);
-		emailUsernamePrompt.changeStyle(Font.PLAIN);
-		emailUsernamePrompt.changeAlpha(128);
+		usernameField = new JTextField();
+		usernameField.setColumns(30);
+		usernameField.setForeground(new Color(128, 128, 128));
+		usernameField.setFont(new Font("Ebrima", Font.PLAIN, 16));
+		usernameField.setBorder(new CompoundBorder(usernameField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
+		usernamePrompt = new PromptText("enter username", usernameField);
+		usernamePrompt.changeStyle(Font.PLAIN);
+		usernamePrompt.changeAlpha(128);
 		GridBagConstraints gbc_loginEmailUsernameField = new GridBagConstraints();
 		gbc_loginEmailUsernameField.insets = new Insets(0, 10, 5, 10);
 		gbc_loginEmailUsernameField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_loginEmailUsernameField.gridx = 0;
 		gbc_loginEmailUsernameField.gridy = 3;
-		add(emailUsernameField, gbc_loginEmailUsernameField);
+		add(usernameField, gbc_loginEmailUsernameField);
 
-		passwordLabel = new JLabel("contrase\u00F1a");
+		passwordLabel = new JLabel("password");
 		passwordLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		passwordLabel.setForeground(new Color(128, 128, 128));
 		GridBagConstraints gbc_passwordLabel = new GridBagConstraints();
@@ -126,7 +177,7 @@ public class LoginPanel extends JPanel {
 		passwordField.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		passwordField.setBorder(new CompoundBorder(passwordField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
 		passwordField.setEchoChar('•');
-		passwordPrompt = new PromptText("ingrese contraseña", passwordField);
+		passwordPrompt = new PromptText("enter password", passwordField);
 		passwordPrompt.changeStyle(Font.PLAIN);
 		passwordPrompt.changeAlpha(128);
 		GridBagConstraints gbc_loginPasswordField = new GridBagConstraints();
@@ -136,45 +187,45 @@ public class LoginPanel extends JPanel {
 		gbc_loginPasswordField.gridy = 5;
 		add(passwordField, gbc_loginPasswordField);
 
-		loginButton = new JButton("Ingresar");
+		loginButton = new JButton("Sign In");
 		loginButton.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		loginButton.setFocusPainted(false);
 		loginButton.addActionListener(listener);
-		loginButton.setActionCommand("Ingresar");
+		loginButton.setActionCommand("Sign In");
 		GridBagConstraints gbc_loginButton = new GridBagConstraints();
 		gbc_loginButton.insets = new Insets(10, 0, 5, 0);
 		gbc_loginButton.gridx = 0;
 		gbc_loginButton.gridy = 6;
 		add(loginButton, gbc_loginButton);
 
-		registerButton = new JButton("Registrarse");
-		registerButton.setFont(new Font("Ebrima", Font.PLAIN, 16));
-		registerButton.setFocusPainted(false);
-		registerButton.addActionListener(listener);
-		registerButton.setActionCommand("Registrarse");
+		createAccountButton = new JButton("Create Account");
+		createAccountButton.setFont(new Font("Ebrima", Font.PLAIN, 16));
+		createAccountButton.setFocusPainted(false);
+		createAccountButton.addActionListener(listener);
+		createAccountButton.setActionCommand("Create Account");
 		GridBagConstraints gbc_registerButton = new GridBagConstraints();
 		gbc_registerButton.insets = new Insets(0, 0, 280, 0);
 		gbc_registerButton.gridx = 0;
 		gbc_registerButton.gridy = 7;
-		add(registerButton, gbc_registerButton);
+		add(createAccountButton, gbc_registerButton);
 	}
 
 	/**
 	 * 
-	 * getEmailUsernameFieldText String method
+	 * getLoginUsernameFieldText String method
 	 * 
-	 * @return loginEmailUsernameFieldText
+	 * @return username field text
 	 */
 
-	public String getLoginEmailUsernameFieldText() {
-		return emailUsernameField.getText();
+	public String getLoginUsernameFieldText() {
+		return usernameField.getText();
 	}
 
 	/**
 	 * 
 	 * getPasswordFieldText String method
 	 * 
-	 * @return loginPasswordFieldText
+	 * @return login password field text
 	 */
 
 	public String getLoginPasswordFieldText() {
@@ -187,7 +238,7 @@ public class LoginPanel extends JPanel {
 	 */
 
 	public void emptyLoginFields() {
-		emailUsernameField.setText("");
+		usernameField.setText("");
 		passwordField.setText("");
 	}
 
@@ -207,6 +258,6 @@ public class LoginPanel extends JPanel {
 	 */
 
 	public void setDefaultLoginPanelCursorPosition() {
-		emailUsernameField.requestFocusInWindow();
+		usernameField.requestFocusInWindow();
 	}
 }

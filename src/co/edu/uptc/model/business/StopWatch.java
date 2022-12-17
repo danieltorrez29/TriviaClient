@@ -1,24 +1,36 @@
 package co.edu.uptc.model.business;
 
 /**
+ * 
+ * StopWatch class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description StopWatch Class
  */
 
 public class StopWatch {
 
 	/**
-	 * Constants
+	 * Nanoseconds per second constant
 	 */
 
 	private final long nanoSecondsPerSecond = 1000000000;
 
 	/**
-	 * Attribute declaration
+	 * Stopwatch start time
 	 */
 
-	private long stopWatchStartTime, stopWatchStopTime;
+	private long stopWatchStartTime;
+
+	/**
+	 * Stopwatch stop time
+	 */
+
+	private long stopWatchStopTime;
+
+	/**
+	 * Stopwatch running
+	 */
+
 	private boolean stopWatchRunning;
 
 	/**

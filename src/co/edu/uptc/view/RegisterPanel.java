@@ -17,9 +17,10 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
 /**
+ * 
+ * RegisterPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description RegisterPanel Class
  */
 
 public class RegisterPanel extends JPanel {
@@ -29,21 +30,101 @@ public class RegisterPanel extends JPanel {
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Purple panel
+	 */
+
 	private JPanel purplePanel;
+
+	/**
+	 * Email label
+	 */
+
 	private JLabel emailLabel;
+
+	/**
+	 * Logo label
+	 */
+
 	private JLabel logoLabel;
+
+	/**
+	 * Username label
+	 */
+
 	private JLabel usernameLabel;
+
+	/**
+	 * Password label
+	 */
+
 	private JLabel passwordLabel;
+
+	/**
+	 * Confirm password label
+	 */
+
 	private JLabel confirmPasswordLabel;
+
+	/**
+	 * Email field
+	 */
+
 	private JTextField emailField;
+
+	/**
+	 * Username field
+	 */
+
 	private JTextField usernameField;
+
+	/**
+	 * Email prompt text
+	 */
+
 	private PromptText emailPrompt;
+
+	/**
+	 * Username prompt text
+	 */
+
 	private PromptText usernamePrompt;
+
+	/**
+	 * Password prompt text
+	 */
+
 	private PromptText passwordPrompt;
+
+	/**
+	 * Confirm password prompt text
+	 */
+
 	private PromptText confirmPasswordPrompt;
+
+	/**
+	 * Password field
+	 */
+
 	private JPasswordField passwordField;
+
+	/**
+	 * Confirm password field
+	 */
+
 	private JPasswordField confirmPasswordField;
+
+	/**
+	 * Register button
+	 */
+
 	private JButton registerButton;
+
+	/**
+	 * Want to login button
+	 */
+
 	private JButton wantToLoginButton;
 
 	/**
@@ -91,7 +172,7 @@ public class RegisterPanel extends JPanel {
 		gbc_logoLabel.gridy = 1;
 		add(logoLabel, gbc_logoLabel);
 
-		emailLabel = new JLabel("correo");
+		emailLabel = new JLabel("email");
 		emailLabel.setForeground(new Color(128, 128, 128));
 		emailLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		GridBagConstraints gbc_emailLabel = new GridBagConstraints();
@@ -105,7 +186,7 @@ public class RegisterPanel extends JPanel {
 		emailField.setForeground(new Color(128, 128, 128));
 		emailField.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		emailField.setBorder(new CompoundBorder(emailField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
-		emailPrompt = new PromptText("ingrese correo", emailField);
+		emailPrompt = new PromptText("enter email", emailField);
 		emailPrompt.changeStyle(Font.PLAIN);
 		emailPrompt.changeAlpha(128);
 		GridBagConstraints gbc_emailField = new GridBagConstraints();
@@ -116,7 +197,7 @@ public class RegisterPanel extends JPanel {
 		add(emailField, gbc_emailField);
 		emailField.setColumns(10);
 
-		usernameLabel = new JLabel("nombre de usuario");
+		usernameLabel = new JLabel("username");
 		usernameLabel.setForeground(new Color(128, 128, 128));
 		usernameLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		GridBagConstraints gbc_usernameLabel = new GridBagConstraints();
@@ -130,7 +211,7 @@ public class RegisterPanel extends JPanel {
 		usernameField.setForeground(new Color(128, 128, 128));
 		usernameField.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		usernameField.setBorder(new CompoundBorder(usernameField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
-		usernamePrompt = new PromptText("ingrese nombre de usuario", usernameField);
+		usernamePrompt = new PromptText("enter username", usernameField);
 		usernamePrompt.changeStyle(Font.PLAIN);
 		usernamePrompt.changeAlpha(128);
 		GridBagConstraints gbc_usernameField = new GridBagConstraints();
@@ -141,7 +222,7 @@ public class RegisterPanel extends JPanel {
 		add(usernameField, gbc_usernameField);
 		usernameField.setColumns(10);
 
-		passwordLabel = new JLabel("contraseña");
+		passwordLabel = new JLabel("password");
 		passwordLabel.setForeground(new Color(128, 128, 128));
 		passwordLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		GridBagConstraints gbc_passwordLabel = new GridBagConstraints();
@@ -156,7 +237,7 @@ public class RegisterPanel extends JPanel {
 		passwordField.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		passwordField.setBorder(new CompoundBorder(passwordField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
 		passwordField.setEchoChar('•');
-		passwordPrompt = new PromptText("ingrese contraseña", passwordField);
+		passwordPrompt = new PromptText("enter password", passwordField);
 		passwordPrompt.changeStyle(Font.PLAIN);
 		passwordPrompt.changeAlpha(128);
 		GridBagConstraints gbc_passwordField = new GridBagConstraints();
@@ -166,7 +247,7 @@ public class RegisterPanel extends JPanel {
 		gbc_passwordField.gridy = 7;
 		add(passwordField, gbc_passwordField);
 
-		confirmPasswordLabel = new JLabel("confirmar contraseña");
+		confirmPasswordLabel = new JLabel("confirm password");
 		confirmPasswordLabel.setForeground(new Color(128, 128, 128));
 		confirmPasswordLabel.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		GridBagConstraints gbc_confirmPasswordLabel = new GridBagConstraints();
@@ -182,7 +263,7 @@ public class RegisterPanel extends JPanel {
 		confirmPasswordField
 				.setBorder(new CompoundBorder(confirmPasswordField.getBorder(), new EmptyBorder(5, 0, 5, 0)));
 		confirmPasswordField.setEchoChar('•');
-		confirmPasswordPrompt = new PromptText("confirme contraseña", confirmPasswordField);
+		confirmPasswordPrompt = new PromptText("confirm password", confirmPasswordField);
 		confirmPasswordPrompt.changeStyle(Font.PLAIN);
 		confirmPasswordPrompt.changeAlpha(128);
 		GridBagConstraints gbc_confirmPasswordField = new GridBagConstraints();
@@ -192,22 +273,22 @@ public class RegisterPanel extends JPanel {
 		gbc_confirmPasswordField.gridy = 9;
 		add(confirmPasswordField, gbc_confirmPasswordField);
 
-		registerButton = new JButton("Registrarse");
+		registerButton = new JButton("Create Account");
 		registerButton.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		registerButton.setFocusPainted(false);
 		registerButton.addActionListener(listener);
-		registerButton.setActionCommand("Registrarse - Usuario");
+		registerButton.setActionCommand("Create Account - User");
 		GridBagConstraints gbc_registerButton = new GridBagConstraints();
 		gbc_registerButton.insets = new Insets(10, 0, 5, 0);
 		gbc_registerButton.gridx = 0;
 		gbc_registerButton.gridy = 10;
 		add(registerButton, gbc_registerButton);
 
-		wantToLoginButton = new JButton("¿Quieres ingresar?");
+		wantToLoginButton = new JButton("Want to login?");
 		wantToLoginButton.setFont(new Font("Ebrima", Font.PLAIN, 16));
 		wantToLoginButton.setFocusPainted(false);
 		wantToLoginButton.addActionListener(listener);
-		wantToLoginButton.setActionCommand("¿Quieres ingresar?");
+		wantToLoginButton.setActionCommand("Want to login?");
 		GridBagConstraints gbc_wantToLoginButton = new GridBagConstraints();
 		gbc_wantToLoginButton.insets = new Insets(0, 0, 5, 0);
 		gbc_wantToLoginButton.gridx = 0;

@@ -1,28 +1,49 @@
 package co.edu.uptc.model.business;
 
 /**
+ * 
+ * User class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description User Class
  */
 
 public class User implements Comparable<User> {
 
 	/**
-	 * Attribute declaration
+	 * Email
 	 */
 
 	private String email;
+
+	/**
+	 * Username
+	 */
+
 	private String username;
+
+	/**
+	 * Password
+	 */
+
 	private String password;
+
+	/**
+	 * Profile pic path
+	 */
+
 	private String profilePicPath;
+
+	/**
+	 * Stats
+	 */
+
 	private Stats stats;
 
 	/**
 	 * Constructor method
 	 * 
 	 * @param email
-	 * @param username
+	 * @param username 
 	 * @param password
 	 * @param profilePicPath
 	 * @param stats

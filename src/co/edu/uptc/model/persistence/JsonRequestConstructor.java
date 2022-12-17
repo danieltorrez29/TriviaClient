@@ -5,9 +5,10 @@ import com.google.gson.Gson;
 import co.edu.uptc.net.Request;
 
 /**
+ * 
+ * JsonRequestConstructor class
+ * 
  * @author Daniel Torres
- * @Date 27/11/2022
- * @Description JsonRequest Class
  */
 
 public class JsonRequestConstructor {

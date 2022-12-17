@@ -17,35 +17,121 @@ import javax.swing.SwingConstants;
 import co.edu.uptc.model.business.User;
 
 /**
+ * 
+ * StatsPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description StatsPanel Class
  */
 
 public class StatsPanel extends JPanel {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Stats label
+	 */
+
 	private JLabel statsLabel;
+
+	/**
+	 * Profile pic label
+	 */
+
 	private JLabel profilePicLabel;
+
+	/**
+	 * Username label
+	 */
+
 	private JLabel usernameLabel;
+
+	/**
+	 * Score tile label
+	 */
+
 	private JLabel scoreTitleLabel;
+
+	/**
+	 * Accuracy title label
+	 */
+
 	private JLabel accuracyTitleLabel;
+
+	/**
+	 * Score label
+	 */
+
 	private JLabel scoreLabel;
+
+	/**
+	 * Accuracy label
+	 */
+
 	private JLabel accuracyLabel;
+
+	/**
+	 * Correct label
+	 */
+
 	private JLabel correctLabel;
+
+	/**
+	 * Incorrect label
+	 */
+
 	private JLabel incorrectLabel;
+
+	/**
+	 * Correct title label
+	 */
+
 	private JLabel correctTitleLabel;
+
+	/**
+	 * Incorrect title label
+	 */
+
 	private JLabel incorrectTitleLabel;
+
+	/**
+	 * Time label
+	 */
+
 	private JLabel timeLabel;
+
+	/**
+	 * Time title label
+	 */
+
 	private JLabel timeTitleLabel;
+
+	/**
+	 * Home button
+	 */
+
 	private JButton homeButton;
+
+	/**
+	 * Accuracy
+	 */
+
 	private double accuracy;
-	private JLabel topicLabel;
-	private JLabel difficultyLabel;
+
+	/**
+	 * Categorie label
+	 */
+
+	private JLabel categorieLabel;
+
+	/**
+	 * Level label
+	 */
+
+	private JLabel levelLabel;
 
 	/**
 	 * 
@@ -70,7 +156,7 @@ public class StatsPanel extends JPanel {
 	 */
 
 	private void initComponents(ActionListener listener) {
-		statsLabel = new JLabel("Estadísticas");
+		statsLabel = new JLabel("Stats");
 		statsLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		statsLabel.setFont(new Font("Ebrima", Font.BOLD, 30));
 		statsLabel.setForeground(new Color(255, 255, 255));
@@ -81,17 +167,17 @@ public class StatsPanel extends JPanel {
 		profilePicLabel.setBounds(39, 85, 152, 138);
 		add(profilePicLabel);
 
-		topicLabel = new JLabel("");
-		topicLabel.setForeground(new Color(255, 255, 255));
-		topicLabel.setFont(new Font("Ebrima", Font.BOLD, 22));
-		topicLabel.setBounds(201, 85, 186, 31);
-		add(topicLabel);
+		categorieLabel = new JLabel("");
+		categorieLabel.setForeground(new Color(255, 255, 255));
+		categorieLabel.setFont(new Font("Ebrima", Font.BOLD, 22));
+		categorieLabel.setBounds(201, 85, 186, 31);
+		add(categorieLabel);
 
-		difficultyLabel = new JLabel("");
-		difficultyLabel.setForeground(new Color(192, 192, 192));
-		difficultyLabel.setFont(new Font("Ebrima", Font.BOLD, 14));
-		difficultyLabel.setBounds(201, 115, 186, 31);
-		add(difficultyLabel);
+		levelLabel = new JLabel("");
+		levelLabel.setForeground(new Color(192, 192, 192));
+		levelLabel.setFont(new Font("Ebrima", Font.BOLD, 14));
+		levelLabel.setBounds(201, 115, 186, 31);
+		add(levelLabel);
 
 		usernameLabel = new JLabel("");
 		usernameLabel.setForeground(new Color(255, 255, 255));
@@ -99,23 +185,23 @@ public class StatsPanel extends JPanel {
 		usernameLabel.setBounds(201, 169, 182, 27);
 		add(usernameLabel);
 
-		homeButton = new JButton("Inicio");
+		homeButton = new JButton("Home");
 		homeButton.setBackground(new Color(255, 255, 255));
 		homeButton.setFont(new Font("Ebrima", Font.BOLD, 18));
 		homeButton.setFocusPainted(false);
 		homeButton.addActionListener(listener);
-		homeButton.setActionCommand("Inicio - Estadísticas");
+		homeButton.setActionCommand("Home - Stats");
 		homeButton.setBounds(39, 746, 344, 31);
 		add(homeButton);
 
-		scoreTitleLabel = new JLabel("Puntuación");
+		scoreTitleLabel = new JLabel("Score");
 		scoreTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		scoreTitleLabel.setForeground(new Color(192, 192, 192));
 		scoreTitleLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
 		scoreTitleLabel.setBounds(51, 236, 122, 14);
 		add(scoreTitleLabel);
 
-		accuracyTitleLabel = new JLabel("Precisión");
+		accuracyTitleLabel = new JLabel("Accuracy");
 		accuracyTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		accuracyTitleLabel.setForeground(new Color(192, 192, 192));
 		accuracyTitleLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
@@ -148,14 +234,14 @@ public class StatsPanel extends JPanel {
 		incorrectLabel.setBounds(242, 474, 77, 37);
 		add(incorrectLabel);
 
-		correctTitleLabel = new JLabel("Correcto");
+		correctTitleLabel = new JLabel("Correct");
 		correctTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		correctTitleLabel.setForeground(new Color(192, 192, 192));
 		correctTitleLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
 		correctTitleLabel.setBounds(86, 522, 87, 14);
 		add(correctTitleLabel);
 
-		incorrectTitleLabel = new JLabel("Incorrecto");
+		incorrectTitleLabel = new JLabel("Wrong");
 		incorrectTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		incorrectTitleLabel.setForeground(new Color(192, 192, 192));
 		incorrectTitleLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
@@ -169,7 +255,7 @@ public class StatsPanel extends JPanel {
 		timeLabel.setBounds(153, 633, 97, 31);
 		add(timeLabel);
 
-		timeTitleLabel = new JLabel("Tiempo total");
+		timeTitleLabel = new JLabel("Time spent");
 		timeTitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		timeTitleLabel.setForeground(new Color(192, 192, 192));
 		timeTitleLabel.setFont(new Font("Ebrima", Font.BOLD, 16));
@@ -187,8 +273,8 @@ public class StatsPanel extends JPanel {
 
 	public void setUIStats(User loggedInUser) {
 		profilePicLabel.setIcon(new ImageIcon(loggedInUser.getProfilePicPath()));
-		topicLabel.setText(loggedInUser.getStats().getCategorie());
-		difficultyLabel.setText(loggedInUser.getStats().getLevel());
+		categorieLabel.setText(loggedInUser.getStats().getCategorie());
+		levelLabel.setText(loggedInUser.getStats().getLevel());
 		usernameLabel.setText(loggedInUser.getUsername());
 		scoreLabel.setText(String.valueOf(loggedInUser.getStats().getScore()));
 		accuracyLabel.setText(String.format("%.1f", loggedInUser.getStats().getAccuracy()) + "%");
@@ -210,9 +296,10 @@ public class StatsPanel extends JPanel {
 	}
 
 	/**
-	 * getPlayAgainButton method
 	 * 
-	 * @return homeButton
+	 * getHomeButton JButton method
+	 * 
+	 * @return home button
 	 */
 
 	public JButton getHomeButton() {

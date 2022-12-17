@@ -13,24 +13,56 @@ import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
 
 /**
+ * 
+ * PromptText class
+ * 
  * @author Rob Camick
- * @Date 29/11/2009
- * @Description PromptText Class
  */
 
 public class PromptText extends JLabel implements FocusListener, DocumentListener {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * JTextComponent
+	 */
+
 	private JTextComponent component;
+
+	/**
+	 * Document
+	 */
+
 	private Document document;
 
+	/**
+	 * Show
+	 */
+
 	private Show show;
+
+	/**
+	 * Show prompt once
+	 */
+
 	private boolean showPromptOnce;
+
+	/**
+	 * Focus lost
+	 */
+
 	private int focusLost;
+
+	/**
+	 * 
+	 * Show enum
+	 * 
+	 * @author Rob Camick
+	 */
 
 	public enum Show {
 		ALWAYS, FOCUS_GAINED, FOCUS_LOST;
@@ -204,9 +236,19 @@ public class PromptText extends JLabel implements FocusListener, DocumentListene
 
 //  Implement FocusListener
 
+	/**
+	 * 
+	 * focusGained overwrite method
+	 */
+
 	public void focusGained(FocusEvent e) {
 		checkForPrompt();
 	}
+
+	/**
+	 * 
+	 * focusLost overwrite method
+	 */
 
 	public void focusLost(FocusEvent e) {
 		focusLost++;
@@ -215,13 +257,28 @@ public class PromptText extends JLabel implements FocusListener, DocumentListene
 
 //  Implement DocumentListener
 
+	/**
+	 * 
+	 * insertUpdate overwrite method
+	 */
+
 	public void insertUpdate(DocumentEvent e) {
 		checkForPrompt();
 	}
 
+	/**
+	 * 
+	 * removeUpdate overwrite method
+	 */
+
 	public void removeUpdate(DocumentEvent e) {
 		checkForPrompt();
 	}
+
+	/**
+	 * 
+	 * changedUpdate overwrite method
+	 */
 
 	public void changedUpdate(DocumentEvent e) {
 	}

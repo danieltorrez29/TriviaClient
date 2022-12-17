@@ -11,18 +11,24 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
+ * 
+ * WelcomePanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description WelcomePanel Class
  */
 
 public class WelcomePanel extends JPanel {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Start button
+	 */
+
 	private JButton startButton;
 
 	/**
@@ -46,12 +52,12 @@ public class WelcomePanel extends JPanel {
 	 */
 
 	private void initComponents(ActionListener listener) {
-		startButton = new JButton("Iniciar");
+		startButton = new JButton("Start");
 		startButton.setFont(new Font("Ebrima", Font.BOLD, 18));
 		startButton.setBounds(29, 576, 345, 32);
 		startButton.setFocusPainted(false);
 		startButton.addActionListener(listener);
-		startButton.setActionCommand("Iniciar");
+		startButton.setActionCommand("Start");
 		add(startButton);
 	}
 

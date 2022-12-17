@@ -13,22 +13,48 @@ import co.edu.uptc.model.business.Answer;
 import co.edu.uptc.model.business.Question;
 
 /**
+ * 
+ * QuestionPanel class
+ * 
  * @author Daniel Torres
- * @Date 16/11/2022
- * @Description QuestionPanel Class
  */
 
 public class QuestionPanel extends JPanel {
 
 	/**
-	 * Attribute declaration
+	 * Serial version UID constant
 	 */
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Question statement text area
+	 */
+
 	private JTextArea questionStatementTextArea;
+
+	/**
+	 * Answer toggle button
+	 */
+
 	private JToggleButton answerToggleButton;
+
+	/**
+	 * First flag toggle button
+	 */
+
 	private JToggleButton firstFlagToggleButton;
+
+	/**
+	 * Second flag toggle button
+	 */
+
 	private JToggleButton secondFlagToggleButton;
+
+	/**
+	 * Button group
+	 */
+
 	private ButtonGroup buttonGroup;
 
 	/**

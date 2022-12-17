@@ -6,19 +6,30 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
+ * 
+ * Connection class
+ * 
  * @author Daniel Torres
- * @Date 3/11/2022
- * @Description Connection Class
  */
 
 public class Connection {
 
 	/**
-	 * Attribute declaration
+	 * Client socket
 	 */
 
 	private Socket socket;
+
+	/**
+	 * Input stream
+	 */
+
 	private DataInputStream input;
+
+	/**
+	 * Output stream
+	 */
+
 	private DataOutputStream output;
 
 	/**

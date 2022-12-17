@@ -17,19 +17,30 @@ import co.edu.uptc.view.MessageDialog;
 import co.edu.uptc.view.TriviaFrame;
 
 /**
+ * 
+ * ClientPresenter class
+ * 
  * @author Daniel Torres
- * @Date 3/11/2022
- * @Description ClientPresenter Class
  */
 
 public class ClientPresenter implements ActionListener {
 
 	/**
-	 * Attribute declaration
+	 * Client-side manager
 	 */
 
 	private ClientSideGame clientSideGame;
+
+	/**
+	 * Connection object
+	 */
+
 	private Connection connection;
+
+	/**
+	 * Trivia frame
+	 */
+
 	private TriviaFrame triviaFrame;
 
 	/**
@@ -97,46 +108,46 @@ public class ClientPresenter implements ActionListener {
 		String command = e.getActionCommand();
 		Request request = null;
 		switch (command) {
-		case "Iniciar":
+		case "Start":
 			triviaFrame.setDefaultLoginPanelButton();
 			triviaFrame.changePanel("loginPanel");
 			triviaFrame.setDefaultLoginPanelCursorPosition();
 			break;
 
-		case "Ingresar":
+		case "Sign In":
 			request = new Request();
 			request.setActionCommand(command);
-			request.setUsername(triviaFrame.getLoginEmailUsernameFieldText());
+			request.setUsername(triviaFrame.getLoginUsernameFieldText());
 			request.setPassword(triviaFrame.getLoginPasswordFieldText());
 			connection.writeUTF(JsonRequestConstructor.createJsonRequestString(request));
 			request = JsonRequestConstructor.createRequestObject(connection.readUTF());
 			if (request.isFlag()) {
-				MessageDialog.confirmMessageDialog(triviaFrame, "Ingreso exitoso");
+				MessageDialog.confirmMessageDialog(triviaFrame, "Successfully sign in");
 				clientSideGame.setLoggedInUser(request.getLoggedInUser());
 				triviaFrame.emptyLoginFields();
 				triviaFrame.setDefaultLevelTopicSelecionPanelButton();
-				triviaFrame.changePanel("levelTopicSelectionPanel");
-				triviaFrame.setDefaultLevelTopicSelectionPanelCursorPosition();
+				triviaFrame.changePanel("levelCategorieSelectionPanel");
+				triviaFrame.setDefaultLevelCategorieSelectionPanelCursorPosition();
 			} else {
 				triviaFrame.emptyLoginFields();
 				triviaFrame.setDefaultLoginPanelCursorPosition();
-				MessageDialog.errorMessageDialog(triviaFrame, "Usuario o contraseña incorrectos");
+				MessageDialog.errorMessageDialog(triviaFrame, "Incorrect username or password");
 			}
 			break;
 
-		case "Registrarse":
+		case "Create Account":
 			triviaFrame.setDefaultRegisterPanelButton();
 			triviaFrame.changePanel("registerPanel");
 			triviaFrame.setDefaultRegisterPanelCursorPosition();
 			break;
 
-		case "Registrarse - Usuario":
+		case "Create Account - User":
 			request = new Request();
 
 			if (triviaFrame.getRegisterEmailFieldText().equals("")
 					|| triviaFrame.getRegisterUsernameFieldText().equals("")) {
 				triviaFrame.setDefaultRegisterPanelCursorPosition();
-				registerErrorAction("Usuario inválido o existente");
+				registerErrorAction("Invalid or existing user");
 			} else {
 				request.setActionCommand(command);
 				request.setFlag(false);
@@ -145,7 +156,7 @@ public class ClientPresenter implements ActionListener {
 				request = JsonRequestConstructor.createRequestObject(connection.readUTF());
 				if (request.isFlag()) {
 					triviaFrame.setDefaultRegisterPanelCursorPosition();
-					registerErrorAction("Usuario inválido o existente");
+					registerErrorAction("Invalid or existing user");
 				} else {
 					if (!triviaFrame.getRegisterPasswordFieldText().equals("")
 							|| !triviaFrame.getRegisterConfirmPasswordFieldText().equals("")) {
@@ -157,39 +168,39 @@ public class ClientPresenter implements ActionListener {
 							request.setEmail(triviaFrame.getRegisterEmailFieldText());
 							request.setPassword(triviaFrame.getRegisterPasswordFieldText());
 							connection.writeUTF(JsonRequestConstructor.createJsonRequestString(request));
-							MessageDialog.confirmMessageDialog(triviaFrame, "Usuario registrado exitosamente");
+							MessageDialog.confirmMessageDialog(triviaFrame, "User successfully registered");
 							triviaFrame.emptyRegisterFields();
 							triviaFrame.changePanel("loginPanel");
 							triviaFrame.setDefaultLoginPanelCursorPosition();
 						} else {
 							triviaFrame.setDefaultRegisterPanelCursorPosition();
-							registerErrorAction("Contraseñas no coinciden o están vacías");
+							registerErrorAction("Passwords do not match or are empty");
 						}
 					} else {
 						triviaFrame.setDefaultRegisterPanelCursorPosition();
-						registerErrorAction("Contraseñas no coinciden o están vacías");
+						registerErrorAction("Passwords do not match or are empty");
 					}
 				}
 			}
 
-		case "¿Quieres ingresar?":
+		case "Want to login?":
 			triviaFrame.emptyLoginFields();
 			triviaFrame.setDefaultLoginPanelButton();
 			triviaFrame.changePanel("loginPanel");
 			triviaFrame.setDefaultLoginPanelCursorPosition();
 			break;
 
-		case "Jugar":
+		case "Play":
 			clientSideGame.startStopWatch();
 			triviaFrame.setDefaultQuestionsPanelButton();
 			switch (triviaFrame.getLevelSelected()) {
-			case "Fácil":
+			case "Easy":
 				triviaFrame.setQuestionsPanels(clientSideGame.getAnyDifficulty(0)
 						.searchCategorie(triviaFrame.getEasyTopicSelected()).getQuestions());
 				triviaFrame.changePanel("questionsPanel");
 				break;
 
-			case "Avanzado":
+			case "Hard":
 				triviaFrame.setQuestionsPanels(clientSideGame.getAnyDifficulty(1)
 						.searchCategorie(triviaFrame.getHardTopicSelected()).getQuestions());
 				triviaFrame.changePanel("questionsPanel");
@@ -201,35 +212,35 @@ public class ClientPresenter implements ActionListener {
 			break;
 
 		case "50/50":
-			triviaFrame.hideIncorrectAnswersAction();
+			triviaFrame.hideWrongAnswersAction();
 			break;
 
-		case "Siguiente":
+		case "Next":
 			if (triviaFrame.isAnyAnswerSelected()) {
 				if (triviaFrame.getLastQuestionPanelAux() != triviaFrame.getQuestionComponetsCount()) {
 					if (triviaFrame.isCorrectSelectedAnswer()) {
 						triviaFrame.incrementCorrect();
 						triviaFrame.incrementLastQuestionPanelAux();
-						MessageDialog.confirmMessageDialog(triviaFrame, "Respuesta Correcta");
+						MessageDialog.confirmMessageDialog(triviaFrame, "Correct Answer");
 						triviaFrame.nextQuestionPanel();
 					} else {
 						triviaFrame.incrementIncorrect();
 						triviaFrame.incrementLastQuestionPanelAux();
-						MessageDialog.errorMessageDialog(triviaFrame, "Respuesta Incorrecta");
+						MessageDialog.errorMessageDialog(triviaFrame, "Wrong Answer");
 						triviaFrame.nextQuestionPanel();
 					}
 				} else {
 					if (triviaFrame.isCorrectSelectedAnswer()) {
 						clientSideGame.stopStopWatch();
 						triviaFrame.incrementCorrect();
-						MessageDialog.confirmMessageDialog(triviaFrame, "Respuesta Correcta");
+						MessageDialog.confirmMessageDialog(triviaFrame, "Correct Answer");
 					} else {
 						clientSideGame.stopStopWatch();
 						triviaFrame.incrementIncorrect();
-						MessageDialog.errorMessageDialog(triviaFrame, "Respuesta Incorrecta");
+						MessageDialog.errorMessageDialog(triviaFrame, "Wrong Answer");
 					}
 					switch (triviaFrame.getLevelSelected()) {
-					case "Fácil":
+					case "Easy":
 						clientSideGame.setLoggedInUserStats(triviaFrame.getLevelSelected(),
 								triviaFrame.getEasyTopicSelected(), triviaFrame.getCorrect(),
 								triviaFrame.getIncorrect(),
@@ -239,7 +250,7 @@ public class ClientPresenter implements ActionListener {
 								clientSideGame.getElapsedSeconds());
 						break;
 
-					case "Avanzado":
+					case "Hard":
 						clientSideGame.setLoggedInUserStats(triviaFrame.getLevelSelected(),
 								triviaFrame.getHardTopicSelected(), triviaFrame.getCorrect(),
 								triviaFrame.getIncorrect(),
@@ -252,6 +263,8 @@ public class ClientPresenter implements ActionListener {
 					default:
 						break;
 					}
+					clientSideGame.getLoggedInUser().getStats()
+							.setGamesPlayed(clientSideGame.getLoggedInUser().getStats().getGamesPlayed() + 1);
 					request = new Request();
 					request.setActionCommand(command);
 					request.setLoggedInUser(clientSideGame.getLoggedInUser());
@@ -259,30 +272,30 @@ public class ClientPresenter implements ActionListener {
 					triviaFrame.setUIStats(clientSideGame.getLoggedInUser());
 					triviaFrame.repaintStatsPanel(clientSideGame.getLoggedInUser().getStats().getAccuracy());
 					triviaFrame.setDefaultStatsPanelButton();
-					MessageDialog.confirmMessageDialog(triviaFrame, "Trivia Finalizada");
+					MessageDialog.confirmMessageDialog(triviaFrame, "Trivia Completed");
 					triviaFrame.changePanel("statsPanel");
 				}
 			} else {
-				MessageDialog.errorMessageDialog(triviaFrame, "Eliga una respuesta");
+				MessageDialog.errorMessageDialog(triviaFrame, "Choose an option");
 			}
 			break;
 
-		case "Últimas Estadísticas":
+		case "Last Stats":
 			triviaFrame.setUIStats(clientSideGame.getLoggedInUser());
 			triviaFrame.repaintStatsPanel(clientSideGame.getLoggedInUser().getStats().getAccuracy());
 			triviaFrame.setDefaultStatsPanelButton();
 			triviaFrame.changePanel("statsPanel");
 			break;
 
-		case "Inicio - Estadísticas":
+		case "Home - Stats":
 			triviaFrame.emptyQuestionsCardPanel();
 			triviaFrame.setStatsFromScratch();
 			triviaFrame.setDefaultLevelTopicSelecionPanelButton();
-			triviaFrame.changePanel("levelTopicSelectionPanel");
-			triviaFrame.setDefaultLevelTopicSelectionPanelCursorPosition();
+			triviaFrame.changePanel("levelCategorieSelectionPanel");
+			triviaFrame.setDefaultLevelCategorieSelectionPanelCursorPosition();
 			break;
 
-		case "Podio":
+		case "Podium":
 			request = new Request();
 			request.setActionCommand(command);
 			connection.writeUTF(JsonRequestConstructor.createJsonRequestString(request));
@@ -292,13 +305,13 @@ public class ClientPresenter implements ActionListener {
 			triviaFrame.changePanel("podiumPanel");
 			break;
 
-		case "Inicio - Podio":
+		case "Home - Podium":
 			triviaFrame.setDefaultLevelTopicSelecionPanelButton();
-			triviaFrame.changePanel("levelTopicSelectionPanel");
-			triviaFrame.setDefaultLevelTopicSelectionPanelCursorPosition();
+			triviaFrame.changePanel("levelCategorieSelectionPanel");
+			triviaFrame.setDefaultLevelCategorieSelectionPanelCursorPosition();
 			break;
 
-		case "Cerrar Sesión":
+		case "Sign Out":
 			clientSideGame.setLoggedInUser(null);
 			triviaFrame.setDefaultLoginPanelButton();
 			triviaFrame.changePanel("loginPanel");

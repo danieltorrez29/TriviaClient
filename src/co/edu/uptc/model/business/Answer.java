@@ -1,27 +1,39 @@
 package co.edu.uptc.model.business;
 
 /**
+ * 
+ * Answer class
+ * 
  * @author Daniel Torres
- * @Date 23/11/2022
- * @Description Answer Class
  */
 
 public class Answer {
 
 	/**
-	 * Attribute declaration
+	 * Statement
 	 */
 
 	private String statement;
+
+	/**
+	 * Correct flag
+	 */
+
 	private boolean flagIsCorrect;
+
+	/**
+	 * Fifty-fifty flag
+	 */
+
 	private boolean flagFiftyFifty;
 
 	/**
+	 * 
 	 * Constructor method
 	 * 
 	 * @param statement
-	 * @param flagIsCorrect
-	 * @param flagFiftyFifty
+	 * @param flagIsCorrect 
+	 * @param flagFiftyFifty 
 	 */
 
 	public Answer(String statement, boolean flagIsCorrect, boolean flagFiftyFifty) {
