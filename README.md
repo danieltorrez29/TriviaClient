@@ -36,3 +36,7 @@ First run the server application, then the Runner inside the run package of the 
 ## Authors
 
 - [@danieltorrez29](https://github.com/danieltorrez29) - Computer and systems engineering.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
