@@ -32,7 +32,7 @@ public class JsonRequestConstructor {
 	 * String
 	 * 
 	 * @param json
-	 * @return
+	 * @return Request
 	 */
 
 	public static Request createRequestObject(String json) {
