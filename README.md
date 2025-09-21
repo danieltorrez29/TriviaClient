@@ -70,7 +70,9 @@ Patterns and decisions:
 
 ## UML Class Model
 
-[![UML Class Diagram](./resources/images/diagrams/trivia_client_class_diagram.png)](./resources/images/diagrams/trivia_client_class_diagram.png)
+[View diagram - Zoom in]([https://<TU-USUARIO>.github.io/<TU-REPO>/](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/diagrams/trivia_client_class_diagram.png))
+
+![UML Class Diagram](./resources/images/diagrams/trivia_client_class_diagram.png)
 
 ## Package Structure
 ```
