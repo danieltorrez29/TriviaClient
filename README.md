@@ -11,6 +11,7 @@ Manages authentication, game flow, statistics, leaderboard and communication wit
 - [Overview](#overview)
 - [Key Features](#key-features)
 - [Architecture and Design](#architecture-and-design)
+- [UML Class Model](#uml-class-model)
 - [Package Structure](#package-structure)
 - [Execution Flow](#execution-flow)
 - [Data Model](#data-model)
@@ -66,6 +67,10 @@ Patterns and decisions:
 * Use of button `ActionCommand` to centralize flow in a single `actionPerformed` (reduces coupling between view and logic).
 * Lazy construction of question panels (each `QuestionPanel` is instantiated when a block of questions is set).
 * Division of questions by level -> `Difficulty` -> `Categorie` -> `Question` -> `Answer` (clear and scalable hierarchy).
+
+## UML Class Model
+
+[![UML Class Diagram](./resources/images/diagrams/trivia_client_class_diagram.png)](./resources/images/diagrams/trivia_client_class_diagram.png)
 
 ## Package Structure
 ```
