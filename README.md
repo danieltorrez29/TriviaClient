@@ -70,14 +70,7 @@ Patterns and decisions:
 
 ## UML Class Model
 
-<details>
-  <summary>View / Zoom diagram</summary>
-
-  <p align="center">
-    <img src="./resources/images/diagrams/trivia_client_class_diagram.svg" alt="UML Class Diagram" style="max-width:100%; height:auto;" />
-  </p>
-
-</details>
+[![UML Class Diagram](./resources/images/diagrams/trivia_client_class_diagram.png)](./resources/images/diagrams/trivia_client_class_diagram.png)
 
 ## Package Structure
 ```
