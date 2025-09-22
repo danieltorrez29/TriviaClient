@@ -181,12 +181,12 @@ Modify according to the server location.
 
 Here are some representative screenshots of the application:
 
-[![Welcome Screen](./resources/images/screenshots/welcome_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/welcome.png)
-[![Login Screen](./resources/images/screenshots/login_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/login.png)
-[![Home Screen](./resources/images/screenshots/home_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/home.png)
-[![Game Screen](./resources/images/screenshots/game_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/game.png)
-[![Stats Screen](./resources/images/screenshots/stats_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/stats.png)
-[![Podium Screen](./resources/images/screenshots/podium_thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/podium.png)
+[![Welcome Screen](./resources/images/screenshots/welcome.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/welcome.png)
+[![Login Screen](./resources/images/screenshots/login.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/login.png)
+[![Home Screen](./resources/images/screenshots/home.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/home.png)
+[![Game Screen](./resources/images/screenshots/game.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/game.png)
+[![Stats Screen](./resources/images/screenshots/stats.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/stats.png)
+[![Podium Screen](./resources/images/screenshots/podium.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/podium.png)
 
 ## Best Practices and Coding Standards
 - Classes with uniform JavaDoc (Constructor, getters, descriptive methods).
