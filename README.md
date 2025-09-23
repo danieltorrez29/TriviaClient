@@ -6,8 +6,8 @@ Manages authentication, game flow, statistics, leaderboard and communication wit
 
 ---
 
-## Index
-- [Index](#index)
+<h2 align="left">Index</h2>
+
 - [Overview](#overview)
 - [Key Features](#key-features)
 - [Architecture and Design](#architecture-and-design)
