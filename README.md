@@ -26,7 +26,7 @@ Manages authentication, game flow, statistics, leaderboard and communication wit
 - [Best Practices and Coding Standards](#best-practices-and-coding-standards)
 - [Extensibility](#extensibility)
 - [Roadmap / Future Ideas](#roadmap--future-ideas)
-- [Credits and Author](#credits-and-author)
+- [Author](#author)
 - [License](#license)
 
 ---
@@ -211,8 +211,8 @@ Direct extension ideas:
 - Subtle animations (transitions between panels) using `CardLayout` + effects.
 - Unit tests (mocking `Connection`) and integration tests.
 
-## Credits and Author
-Author: [@danieltorrez29](https://github.com/danieltorrez29) – Systems and Computer Engineer - Database Specialist.
+## Author
+- [@danieltorrez29](https://github.com/danieltorrez29) – Systems and Computer Engineer - Database Specialist.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
