@@ -181,10 +181,10 @@ Modify according to the server location.
 
 Here are some representative screenshots of the application:
 
-[![Home Screen](./resources/images/screenshots/home.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/home.png)
-[![Game Screen](./resources/images/screenshots/game.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/game.png)
-[![Stats Screen](./resources/images/screenshots/stats.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/stats.png)
-[![Podium Screen](./resources/images/screenshots/podium.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/podium.png)
+[![Home Screen](./resources/images/screenshots/home-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/home.png)
+[![Game Screen](./resources/images/screenshots/game-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/game.png)
+[![Stats Screen](./resources/images/screenshots/stats-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/stats.png)
+[![Podium Screen](./resources/images/screenshots/podium-thumb.png)](https://raw.githubusercontent.com/danieltorrez29/TriviaClient/refs/heads/master/resources/images/screenshots/podium.png)
 
 ## Best Practices and Coding Standards
 - Classes with uniform JavaDoc (Constructor, getters, descriptive methods).
